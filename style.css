@@ -1,0 +1,32 @@
+/* 🌸 Sakura Cherry Blossom PS4 Skin 🌸 */
+
+.controller.ps4 {
+    background: url("https://i.imgur.com/8Qx9YFQ.png") no-repeat center;
+    background-size: contain;
+    filter: drop-shadow(0 0 15px rgba(255,182,193,0.7));
+}
+
+/* Soft pink glow when buttons are pressed */
+.button.pressed {
+    filter: brightness(1.2) drop-shadow(0 0 12px rgba(255,105,180,0.9));
+}
+
+/* Light pink idle buttons */
+.button {
+    opacity: 0.85;
+}
+
+/* Analog stick glow */
+.stick.pressed {
+    filter: drop-shadow(0 0 10px rgba(255,182,193,0.8));
+}
+
+/* Triggers */
+.trigger.pressed {
+    background: rgba(255,182,193,0.5) !important;
+}
+
+/* Background vibe */
+body {
+    background: radial-gradient(circle at center, #ffe6f0 0%, #ffc0cb 40%, #f8b7d3 100%);
+}
