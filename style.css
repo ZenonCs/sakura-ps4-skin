@@ -1,14 +1,25 @@
 /*
- * Sakura Cherry Blossom PS4 Controller Theme
+ * Sakura Cherry Blossom PS4 Controller Theme - BOLD VERSION
  * For use with gamepadviewer.com
- * URL: ?p=1&s=5&css=<your-css-url-here>
  */
 
-/* Main controller body - Cherry blossom gradient overlay */
-.controller.ds4 {
-    filter: hue-rotate(-15deg) saturate(1.3) brightness(1.1) drop-shadow(0 10px 30px rgba(255, 182, 193, 0.6));
+/* BACKGROUND - Cherry blossom pink gradient */
+body {
+    background: linear-gradient(135deg, #ffb3d9 0%, #ffc4e1 25%, #ffe0f0 50%, #fff0f5 100%) !important;
 }
 
+/* Main controller - PINK SAKURA TINT */
+.controller.ds4 {
+    filter: sepia(0.5) hue-rotate(290deg) saturate(3) brightness(1.2) !important;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Add pink overlay to entire controller */
 .controller.ds4::before {
     content: '';
     position: absolute;
@@ -16,214 +27,244 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, 
-        rgba(255, 179, 217, 0.4) 0%, 
-        rgba(255, 192, 203, 0.3) 25%, 
-        rgba(255, 240, 245, 0.2) 50%, 
-        rgba(255, 179, 217, 0.3) 75%, 
-        rgba(255, 182, 193, 0.4) 100%);
+    background: radial-gradient(ellipse at center, 
+        rgba(255, 179, 217, 0.5) 0%, 
+        rgba(255, 192, 203, 0.4) 30%,
+        rgba(255, 105, 180, 0.3) 60%,
+        transparent 100%);
     pointer-events: none;
-    z-index: 1;
+    z-index: 999;
     border-radius: inherit;
+    mix-blend-mode: screen;
 }
 
-/* Sakura petal decorations */
+/* Cherry blossom petals decoration */
 .controller.ds4::after {
-    content: '';
+    content: '🌸 🌸 🌸 🌸 🌸';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 105, 180, 0.3) 0%, transparent 8px),
-        radial-gradient(circle at 85% 18%, rgba(255, 182, 193, 0.4) 0%, transparent 10px),
-        radial-gradient(circle at 30% 45%, rgba(255, 192, 203, 0.25) 0%, transparent 7px),
-        radial-gradient(circle at 75% 55%, rgba(255, 105, 180, 0.35) 0%, transparent 9px),
-        radial-gradient(circle at 20% 75%, rgba(255, 182, 193, 0.3) 0%, transparent 8px),
-        radial-gradient(circle at 88% 80%, rgba(255, 192, 203, 0.35) 0%, transparent 10px),
-        radial-gradient(circle at 50% 30%, rgba(255, 105, 180, 0.2) 0%, transparent 6px);
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    letter-spacing: 20px;
     pointer-events: none;
-    z-index: 2;
+    z-index: 1000;
+    animation: petals-sway 4s ease-in-out infinite;
 }
 
-/* Triggers - Pink sakura gradient */
+@keyframes petals-sway {
+    0%, 100% { transform: translateX(-50%) rotate(0deg); }
+    50% { transform: translateX(-50%) rotate(5deg); }
+}
+
+/* Triggers - BRIGHT PINK */
 .ds4 .trigger {
-    filter: hue-rotate(-30deg) saturate(1.5) brightness(1.2);
+    background: linear-gradient(to bottom, #ff69b4, #ff1493) !important;
+    filter: drop-shadow(0 5px 15px rgba(255, 20, 147, 0.8)) !important;
 }
 
-.ds4 .trigger.left,
-.ds4 .trigger.right {
-    opacity: 0.8;
-}
-
-/* Bumpers - Cherry blossom pink */
+/* Bumpers - SAKURA PINK */
 .ds4 .bumper {
-    filter: hue-rotate(-25deg) saturate(1.4) brightness(1.15);
+    background: linear-gradient(to bottom, #ffb3d9, #ff69b4) !important;
+    filter: drop-shadow(0 3px 10px rgba(255, 105, 180, 0.7)) !important;
 }
 
 .ds4 .bumper.pressed {
-    filter: hue-rotate(-35deg) saturate(1.8) brightness(1.4) drop-shadow(0 0 15px rgba(255, 20, 147, 0.8));
-    opacity: 1;
+    background: linear-gradient(to bottom, #ff1493, #c71585) !important;
+    filter: drop-shadow(0 0 25px rgba(255, 20, 147, 1)) brightness(1.5) !important;
+    transform: translateY(3px);
 }
 
-/* Touchpad - Frosted sakura with subtle pattern */
+/* Touchpad - FROSTED PINK GLASS */
 .ds4 .touchpad {
-    background: rgba(255, 240, 245, 0.6);
-    backdrop-filter: blur(10px);
-    box-shadow: inset 0 0 20px rgba(255, 182, 193, 0.4);
-}
-
-.ds4 .touchpad::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 30%, rgba(255, 192, 203, 0.2) 0%, transparent 15%),
-        radial-gradient(circle at 80% 40%, rgba(255, 182, 193, 0.2) 0%, transparent 15%),
-        radial-gradient(circle at 50% 70%, rgba(255, 192, 203, 0.15) 0%, transparent 15%);
-    pointer-events: none;
+    background: linear-gradient(135deg, 
+        rgba(255, 182, 193, 0.8) 0%, 
+        rgba(255, 192, 203, 0.9) 100%) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.7),
+                inset 0 5px 20px rgba(255, 255, 255, 0.5) !important;
+    border: 2px solid rgba(255, 255, 255, 0.8) !important;
 }
 
 .ds4 .touchpad.pressed {
-    background: rgba(255, 182, 193, 0.9);
-    box-shadow: 0 0 25px rgba(255, 20, 147, 0.7), inset 0 0 20px rgba(255, 105, 180, 0.6);
+    background: linear-gradient(135deg, 
+        rgba(255, 20, 147, 0.95) 0%, 
+        rgba(255, 105, 180, 0.95) 100%) !important;
+    box-shadow: 0 0 40px rgba(255, 20, 147, 1),
+                inset 0 5px 20px rgba(255, 255, 255, 0.7) !important;
 }
 
-/* PS Button - Glowing sakura heart */
+/* PS Button - GLOWING SAKURA */
 .ds4 .meta {
-    filter: hue-rotate(-40deg) saturate(2) brightness(1.3);
+    background: radial-gradient(circle, 
+        #ff1493 0%, 
+        #ff69b4 50%, 
+        #ffb3d9 100%) !important;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.9) !important;
+    filter: brightness(1.5) !important;
 }
 
 .ds4 .meta.pressed {
-    filter: hue-rotate(-45deg) saturate(2.5) brightness(1.6) drop-shadow(0 0 20px rgba(255, 20, 147, 1));
-    animation: sakura-pulse 0.6s ease-in-out;
+    background: radial-gradient(circle, 
+        #ff0080 0%, 
+        #ff1493 50%, 
+        #ff69b4 100%) !important;
+    box-shadow: 0 0 50px rgba(255, 20, 147, 1.5) !important;
+    filter: brightness(2) !important;
+    animation: mega-pulse 0.4s ease-in-out;
 }
 
-@keyframes sakura-pulse {
-    0%, 100% { 
-        transform: scale(1); 
-    }
-    50% { 
-        transform: scale(1.15); 
-    }
+@keyframes mega-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.3); }
 }
 
-/* Start and Share buttons */
+/* Start/Options and Share buttons - BRIGHT PINK */
 .ds4 .back, 
 .ds4 .start {
-    filter: hue-rotate(-30deg) saturate(1.5) brightness(1.2);
+    background: linear-gradient(135deg, #ffb3d9, #ff69b4) !important;
+    box-shadow: 0 3px 10px rgba(255, 105, 180, 0.6) !important;
 }
 
 .ds4 .back.pressed, 
 .ds4 .start.pressed {
-    filter: hue-rotate(-40deg) saturate(2) brightness(1.5) drop-shadow(0 0 12px rgba(255, 20, 147, 0.9));
-    opacity: 1;
+    background: linear-gradient(135deg, #ff1493, #c71585) !important;
+    box-shadow: 0 0 25px rgba(255, 20, 147, 1) !important;
+    filter: brightness(1.5) !important;
 }
 
-/* Face buttons - Keep original colors but add sakura glow */
+/* Face buttons - SUPER BRIGHT */
 .ds4 .button {
-    transition: all 0.15s ease;
-}
-
-.ds4 .button.pressed {
-    filter: brightness(1.4) drop-shadow(0 0 15px currentColor);
-    transform: scale(0.92) translateY(3px);
-}
-
-/* Add sakura pink tint to Square button (X) */
-.ds4 .button.x {
-    filter: hue-rotate(-30deg) saturate(1.3) brightness(1.1);
-}
-
-.ds4 .button.x.pressed {
-    filter: hue-rotate(-40deg) saturate(1.8) brightness(1.5) drop-shadow(0 0 20px rgba(255, 20, 147, 0.9));
-}
-
-/* Analog sticks - Sakura pink gradient */
-.ds4 .stick {
-    filter: hue-rotate(-30deg) saturate(1.4) brightness(1.2);
+    filter: saturate(2) brightness(1.3) !important;
     transition: all 0.1s ease;
 }
 
+.ds4 .button.pressed {
+    filter: saturate(3) brightness(2) drop-shadow(0 0 25px currentColor) !important;
+    transform: scale(0.85) translateY(5px) !important;
+}
+
+/* Square button (X) - EXTRA SAKURA PINK */
+.ds4 .button.x {
+    background: linear-gradient(135deg, #ffb3d9, #ff69b4) !important;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.8) !important;
+}
+
+.ds4 .button.x.pressed {
+    background: linear-gradient(135deg, #ff1493, #c71585) !important;
+    box-shadow: 0 0 30px rgba(255, 20, 147, 1) !important;
+}
+
+/* Analog sticks - BRIGHT SAKURA */
+.ds4 .stick {
+    background: radial-gradient(circle at 30% 30%, 
+        #ffe0f0 0%, 
+        #ffb3d9 40%, 
+        #ff69b4 100%) !important;
+    border: 3px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.7) !important;
+}
+
 .ds4 .stick.pressed {
-    filter: hue-rotate(-40deg) saturate(1.8) brightness(1.4) drop-shadow(0 0 15px rgba(255, 20, 147, 0.8));
+    background: radial-gradient(circle at 30% 30%, 
+        #ffb3d9 0%, 
+        #ff69b4 40%, 
+        #ff1493 100%) !important;
+    box-shadow: 0 0 25px rgba(255, 20, 147, 1) !important;
+    filter: brightness(1.5) !important;
 }
 
-.ds4 .stick.pressed.left,
-.ds4 .stick.pressed.right {
-    transform: scale(0.96);
-}
-
-/* D-Pad - Cherry blossom styling */
+/* D-Pad - BRIGHT PINK */
 .ds4 .face {
-    filter: hue-rotate(-30deg) saturate(1.4) brightness(1.2);
-    transition: all 0.12s ease;
+    background: linear-gradient(135deg, #ffb3d9, #ff91c7) !important;
+    filter: drop-shadow(0 4px 10px rgba(255, 105, 180, 0.7)) !important;
 }
 
 .ds4 .face.pressed {
-    filter: hue-rotate(-40deg) saturate(1.8) brightness(1.5) drop-shadow(0 0 15px rgba(255, 20, 147, 0.8));
-    transform: scale(0.93);
+    background: linear-gradient(135deg, #ff1493, #c71585) !important;
+    filter: drop-shadow(0 0 25px rgba(255, 20, 147, 1)) brightness(1.5) !important;
+    transform: scale(0.9) !important;
 }
 
-/* Pressed state glow effect for all buttons */
-.ds4 .button.pressed::after,
-.ds4 .stick.pressed::after,
-.ds4 .face.pressed::after,
-.ds4 .bumper.pressed::after {
+/* GLOWING AURA around pressed buttons */
+.ds4 .button.pressed::before,
+.ds4 .stick.pressed::before,
+.ds4 .face.pressed::before,
+.ds4 .bumper.pressed::before,
+.ds4 .trigger.pressed::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 120%;
-    height: 120%;
+    width: 200%;
+    height: 200%;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle, rgba(255, 105, 180, 0.6) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(255, 20, 147, 0.8) 0%, transparent 60%);
     border-radius: 50%;
-    animation: sakura-glow 0.8s ease-out;
+    animation: mega-glow 0.6s ease-out;
     pointer-events: none;
-    z-index: -1;
+    z-index: 9999;
 }
 
-@keyframes sakura-glow {
+@keyframes mega-glow {
     0% {
-        transform: translate(-50%, -50%) scale(0.3);
+        transform: translate(-50%, -50%) scale(0.2);
         opacity: 1;
     }
     100% {
-        transform: translate(-50%, -50%) scale(2);
+        transform: translate(-50%, -50%) scale(3);
         opacity: 0;
     }
 }
 
-/* Enhanced overall glow */
+/* Overall controller GLOW */
 .ds4 {
-    box-shadow: 0 10px 40px rgba(255, 182, 193, 0.5),
-                0 0 60px rgba(255, 192, 203, 0.3),
-                inset 0 0 40px rgba(255, 240, 245, 0.2);
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.8),
+                0 0 80px rgba(255, 20, 147, 0.5),
+                inset 0 0 50px rgba(255, 240, 245, 0.3) !important;
 }
 
-/* White variant adjustments */
-.ds4.white {
-    filter: hue-rotate(-20deg) saturate(1.2) brightness(1.15) drop-shadow(0 10px 30px rgba(255, 182, 193, 0.5));
+/* Add sakura petals floating around */
+body::before {
+    content: '🌸';
+    position: fixed;
+    font-size: 40px;
+    top: 10%;
+    left: 20%;
+    animation: float-petal 6s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 9999;
 }
 
-.ds4.white::before {
-    background: linear-gradient(135deg, 
-        rgba(255, 240, 245, 0.5) 0%, 
-        rgba(255, 192, 203, 0.4) 50%, 
-        rgba(255, 179, 217, 0.5) 100%);
+body::after {
+    content: '🌸';
+    position: fixed;
+    font-size: 35px;
+    top: 15%;
+    right: 25%;
+    animation: float-petal 7s ease-in-out infinite 1s;
+    pointer-events: none;
+    z-index: 9999;
 }
 
-/* Disconnected state - desaturated */
+@keyframes float-petal {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: translateY(30px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* Disconnected state */
 .ds4.disconnected {
-    filter: grayscale(0.3) brightness(0.9) opacity(0.7);
+    filter: grayscale(0.8) brightness(0.6) !important;
+    opacity: 0.5;
 }
 
 .ds4.disconnected::before,
 .ds4.disconnected::after {
-    opacity: 0.4;
+    display: none;
 }
